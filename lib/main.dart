@@ -24,8 +24,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(
+        useMaterial3: true,
         appBarTheme: AppBarTheme(
-          iconTheme: IconThemeData(size: 37,color: Colors.white),
+          iconTheme: IconThemeData(size: 37, color: Colors.white),
           backgroundColor: Colors.transparent,
           centerTitle: true,
           elevation: 0,
@@ -33,8 +34,6 @@ class MyApp extends StatelessWidget {
               letterSpacing: 1, fontSize: 25, fontWeight: FontWeight.bold),
         ),
       ),
-      themeMode: Pref.isDarkMode? ThemeMode.dark:ThemeMode.light,
-      darkTheme: ThemeData(brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
       title: 'VpNep',
       home: SplashScreen(),
@@ -44,6 +43,4 @@ class MyApp extends StatelessWidget {
 
 extension AppTheme on ThemeData {
   Color get lightText => Pref.isDarkMode ? Colors.white70 : Colors.black54;
-  Color get bottomNav => Pref.isDarkMode ? Colors.white12 : Colors.blue;
-
 }

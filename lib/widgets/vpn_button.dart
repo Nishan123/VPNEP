@@ -21,18 +21,27 @@ class VpnButton extends StatelessWidget {
               padding: EdgeInsets.all(14),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color.fromARGB(43, 0, 60, 255)),
+                  color: Color.fromARGB(33, 138, 165, 255)),
               child: Container(
                 padding: EdgeInsets.all(38),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color.fromARGB(88, 0, 60, 255)),
+                    color: Color.fromARGB(103, 93, 150, 255)),
                 child: Container(
                   width: mq.height * .12,
                   height: mq.height * .12,
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color.fromARGB(166, 0, 60, 255)),
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 1, 69, 255),
+                          Color.fromARGB(255, 26, 87, 255),
+                          Color.fromARGB(255, 75, 123, 255),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        stops: [0.2, 0.5, 0.7]),
+                  ),
                   child: Center(
                     child: Icon(
                       Icons.power_settings_new_rounded,
@@ -45,7 +54,6 @@ class VpnButton extends StatelessWidget {
             ),
           ),
           SizedBox(height: mq.height * .02),
-         
         ],
       );
 }

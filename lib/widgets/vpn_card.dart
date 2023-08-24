@@ -16,52 +16,57 @@ class VpnCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<HomeController>();
-    return Card(
-      margin: EdgeInsets.symmetric(vertical: mq.height * .001),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      elevation: 3,
-      child: InkWell(
-        onTap: () {
-          controller.vpn.value = vpn;
-          Pref.vpn = vpn;
-          Get.back();
-          MyDialogs.success(msg: "Connection to Server");
-          if (controller.vpnState.value == VpnEngine.vpnConnected) {
-            VpnEngine.stopVpn();
-            Future.delayed(
-                Duration(seconds: 2), () => controller.connectToVpn());
-          } else {
-            controller.connectToVpn();
-          }
-        },
-        child: ListTile(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            title: Text(
-              vpn.countryLong,
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            leading: Image.asset(
-              'assets/flags/${vpn.countryShort.toLowerCase()}.png',
-              height: 40,
-              width: mq.width * .15,
-              fit: BoxFit.cover,
-            ),
-            subtitle: Row(
-              children: [
-                Icon(Icons.speed),
-                SizedBox(width: 5),
-                Text(_formatBytes(vpn.speed, 2)),
-              ],
-            ),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.people),
-                SizedBox(width: 5),
-                Text(vpn.numVpnSessions.toString()),
-              ],
-            )),
+    return Padding(
+      padding: const EdgeInsets.only(left: 7, right: 7),
+      child: Card(
+        color: Colors.white.withOpacity(0.3),
+        margin: EdgeInsets.symmetric(vertical: mq.height * .002),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        elevation: 0,
+        child: InkWell(
+          onTap: () {
+            controller.vpn.value = vpn;
+            Pref.vpn = vpn;
+            Get.back();
+            MyDialogs.success(msg: "Connection to Server");
+            if (controller.vpnState.value == VpnEngine.vpnConnected) {
+              VpnEngine.stopVpn();
+              Future.delayed(
+                  Duration(seconds: 2), () => controller.connectToVpn());
+            } else {
+              controller.connectToVpn();
+            }
+          },
+          child: ListTile(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              title: Text(
+                vpn.countryLong,
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              ),
+              leading: Image.asset(
+                'assets/flags/${vpn.countryShort.toLowerCase()}.png',
+                height: 40,
+                width: mq.width * .15,
+                fit: BoxFit.cover,
+              ),
+              subtitle: Row(
+                children: [
+                  Icon(Icons.speed,color: Colors.white54,),
+                  SizedBox(width: 5),
+                  Text(_formatBytes(vpn.speed, 2),style: TextStyle(color: Colors.white54),),
+                ],
+              ),
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.people,color: Colors.white54,),
+                  SizedBox(width: 5),
+                  Text(vpn.numVpnSessions.toString(),style: TextStyle(color: Colors.white54),),
+                ],
+              )),
+        ),
       ),
     );
   }

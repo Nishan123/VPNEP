@@ -14,7 +14,7 @@ class HomeController extends GetxController {
 
   void connectToVpn() {
     if (vpn.value.openVPNConfigDataBase64.isEmpty) {
-      MyDialogs.info(msg: 'Select a Location '); 
+      MyDialogs.info(msg: 'Select a Location');
       return;
     }
     if (vpnState.value == VpnEngine.vpnDisconnected) {

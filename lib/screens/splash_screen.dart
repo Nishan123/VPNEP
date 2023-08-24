@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/route_manager.dart';
+import 'package:vpn_basic_project/constants/colors.dart';
 import 'package:vpn_basic_project/screens/home_screen.dart';
 import '../main.dart';
 
@@ -27,25 +28,40 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     mq = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: scaffoldBackgroundColor,
       body: Stack(
         children: [
+          Center(
+              child: Text(
+            "VPNEP",
+            style: TextStyle(
+                fontFamily: 'Felixti', color: Colors.white, fontSize: 35),
+          )),
           Positioned(
-            left: mq.width * .3,
-            top: mq.height * .4,
-            width: mq.width * .4,
-            child: Image.asset('assets/images/app icon compress.png'),
-          ),
-          Positioned(
-            bottom: mq.height * .15,
+            bottom: mq.height * .16,
             width: mq.width,
             child: Text(
-              'VpNep',
+              'Powered by',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Theme.of(context).lightText,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1.5),
+                color: Colors.white.withOpacity(0.5),
+                fontWeight: FontWeight.w300,
+                fontSize: 15,
+              ),
+            ),
+          ),
+           Positioned(
+            bottom: mq.height * .13,
+            width: mq.width,
+            child: Text(
+              '2K Soft',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 19,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic
+              ),
             ),
           )
         ],

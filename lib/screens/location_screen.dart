@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:vpn_basic_project/constants/colors.dart';
 import 'package:vpn_basic_project/controllers/location_controller.dart';
 import 'package:vpn_basic_project/widgets/vpn_card.dart';
 
@@ -14,6 +15,7 @@ class LocationScreen extends StatelessWidget {
     if (_controller.vpnlist.isEmpty) _controller.getVpnData();
     return Obx(
       () => Scaffold(
+        backgroundColor: scaffoldBackgroundColor,
         appBar: AppBar(
           title: Text('${_controller.vpnlist.length} Locations Available'),
         ),

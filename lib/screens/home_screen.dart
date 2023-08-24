@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vpn_basic_project/constants/colors.dart';
 import 'package:vpn_basic_project/controllers/home_controller.dart';
-import 'package:vpn_basic_project/helpers/pref.dart';
+
 import 'package:vpn_basic_project/screens/countdown_timer.dart';
 import 'package:vpn_basic_project/screens/network_test_screen.dart';
 import 'package:vpn_basic_project/widgets/home_card.dart';
@@ -25,34 +25,22 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: scaffoldBackgroundColor,
       // bottomNavigationBar: ChangeLocationButton(),
-      endDrawer: Drawer(
-        child: ListView(
-          children: [
-            IconButton(
-                onPressed: () {
-                  Get.changeThemeMode(
-                      Pref.isDarkMode ? ThemeMode.light : ThemeMode.dark);
-                  Pref.isDarkMode = !Pref.isDarkMode;
-                },
-                icon: Icon(
-                  Icons.dark_mode,
-                  size: 30,
-                )),
-            IconButton(
-                onPressed: () => Get.to(() => NetworkTestScreen()),
-                icon: Icon(
-                  Icons.info,
-                  size: 30,
-                ))
-          ],
-        ),
-      ),
+    
       appBar: AppBar(
         title: Text(
           'VPNEP',
           style: TextStyle(fontFamily: 'Felixti'),
         ),
+        actions: [
+             IconButton(
+              onPressed: () => Get.to(() => NetworkTestScreen()),
+              icon: Icon(
+                Icons.info,
+                size: 30,
+              ))
+        ],
       ),
+  
       body: Obx(
         () => Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -119,73 +107,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     HomeCard(
-            //       title: _controller.vpn.value.countryLong.isEmpty
-            //           ? 'Country'
-            //           : _controller.vpn.value.countryLong,
-            //       subtitle: 'Free',
-            //       icon: CircleAvatar(
-            //         radius: 28,
-            //         backgroundColor: Colors.blue,
-            //         child: _controller.vpn.value.countryLong.isEmpty
-            //             ? Icon(
-            //                 Icons.vpn_key,
-            //                 color: Colors.white,
-            //               )
-            //             : null,
-            //         backgroundImage: _controller.vpn.value.countryLong.isEmpty
-            //             ? null
-            //             : AssetImage(
-            //                 'assets/flags/${_controller.vpn.value.countryShort.toLowerCase()}.png'),
-            //       ),
-            //     ),
-            //     HomeCard(
-            //       title: _controller.vpn.value.countryLong.isEmpty
-            //           ? '100 ms'
-            //           : "${_controller.vpn.value.ping} ms",
-            //       subtitle: 'Ping',
-            //       icon: CircleAvatar(
-            //         radius: 28,
-            //         child: Icon(
-            //           Icons.equalizer_outlined,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            // SizedBox(height: mq.height * .02),
-            // StreamBuilder<VpnStatus?>(
-            //   initialData: VpnStatus(),
-            //   stream: VpnEngine.vpnStatusSnapshot(),
-            //   builder: (context, snapshot) => Row(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            //       HomeCard(
-            //         title: "${snapshot.data?.byteIn ?? "0 kbps"}",
-            //         subtitle: 'Download',
-            //         icon: CircleAvatar(
-            //           radius: 28,
-            //           child: Icon(
-            //             Icons.download_outlined,
-            //           ),
-            //         ),
-            //       ),
-            //       HomeCard(
-            //         title: "${snapshot.data?.byteOut ?? "0 kbps"}",
-            //         subtitle: 'Upload',
-            //         icon: CircleAvatar(
-            //           radius: 28,
-            //           child: Icon(
-            //             Icons.upload_outlined,
-            //           ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            
           ]),
         ),
       ),
