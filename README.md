@@ -27,11 +27,4 @@ VPNEP is a simple and elegant VPN application that allows you to access the inte
 
 
 
-How to use
-Download and install the app from the [Google Play Store] or the [App Store].
-Open the app and grant the necessary permissions.
-Tap on the connect button to start the VPN service.
-You can change the region and protocol by tapping on the settings icon.
-To stop the VPN service, tap on the disconnect button.
-Disclaimer
-This app is for educational purposes only. We are not responsible for any misuse or damage caused by this app. Please use it at your own risk.
+Copyright claim © by Nishan Giri
