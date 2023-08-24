@@ -3,19 +3,15 @@
 
 VPNEP is a simple and elegant VPN application that allows you to access the internet securely and privately. It uses OpenVPN servers to provide fast and reliable connections. You can choose from a variety of regions and protocols to suit your needs.
 
-Features
-Clean and easy-to-use UI
-One-tap connection and disconnection
-Multiple regions and protocols to choose from
-No registration or login required
-No logs or tracking of your online activities
+
  <b>Features👇 : </b>
 <ul>
 <li>Clean and easy-to-use UI
 <li>No logs or tracking of your online activities
-<li>Clean and easy-to-use UI
-<li>Clean and easy-to-use UI
-<li>Clean and easy-to-use UI
+<li>One-tap connection and disconnection
+<li>No registration or login required
+<li>Multiple regions and protocols to choose from
+<li>No ads
 
 <b>Here are some Screenshots):</b></br><br>
 <kbd>
