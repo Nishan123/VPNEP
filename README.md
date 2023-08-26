@@ -16,9 +16,9 @@ VPNEP is a simple and elegant VPN application that allows you to access the inte
 <b>Here are some Screenshots):</b></br><br>
 <kbd>
 <img src="https://github.com/Nishan123/VPNEP/blob/main/assets/screenshots/Screenshot%20(1).jpg" width=30% height=30%/>
+<img src="https://github.com/Nishan123/VPNEP/blob/main/assets/screenshots/Screenshot%20(2).jpg" width=30% height=30%/>
 <img src="https://github.com/Nishan123/VPNEP/blob/main/assets/screenshots/Screenshot%20(3).jpg" width=30% height=30%/>
-<img src="https://github.com/Nishan123/VPNEP/blob/main/assets/screenshots/Screenshot%20(3).jpg" width=30% height=30%/>
-<img src="https://github.com/Nishan123/VPNEP/blob/main/assets/screenshots/Screenshot%20(3).jpg" width=30% height=30%/>
+<img src="https://github.com/Nishan123/VPNEP/blob/main/assets/screenshots/Screenshot%20(4).jpg" width=30% height=30%/>
 
 </kbd>
 <br>
